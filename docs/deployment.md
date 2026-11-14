@@ -4,14 +4,17 @@
 
 The Next.js web app can be deployed as a **labelled demonstration**. Set `NEXT_PUBLIC_DEMO_MODE=true` in the hosting environment. No database, Redis, identity provider or payment merchant is required for this mode. Records are local to each browser; there is no cross-device synchronisation or delivery to the property.
 
-Recommended Vercel settings for this npm-workspaces repository:
+Settings for this npm-workspaces repository are committed in `vercel.json` so the host does not have to guess where the nested app builds:
 
 - Framework: Next.js
 - Root directory: repository root
 - Install: `npm ci`
 - Build: `npm run build` (delegates to `apps/web`)
-- Output: Next.js default
+- Output directory: `apps/web/.next` (required; the default `.next` at the repo root does not exist)
+- Node: `22.x`, pinned in `package.json` `engines` to match the verified toolchain
 - Environment: `NEXT_PUBLIC_DEMO_MODE=true`
+
+The production build sends `X-Frame-Options: SAMEORIGIN`; the header is intentionally omitted in development so the Arena live preview can embed the app.
 
 The API and worker are long-running Node services and are **not** deployed by the web build. Use managed containers or a Node host with process supervision, TLS termination, health checks and secret injection. Build each workspace before `npm run start -w ...`. Redis is required by the worker; PostgreSQL is required by both.
 
