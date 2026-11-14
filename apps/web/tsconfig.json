@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "plugins": [{"name": "next"}], "jsx": "preserve", "incremental": true, "baseUrl": ".",
+    "isolatedModules": true, "paths": {"@/*": ["./src/*"], "@king-david/*": ["../../packages/*/src"]}
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

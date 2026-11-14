@@ -1,0 +1,7 @@
+import { Mail, Phone, MessageCircle, Clock3 } from 'lucide-react';
+import { Eyebrow } from '@/components/ui';
+import { EnquiryForm } from '@/components/enquiry-form';
+export const metadata = { title: 'Contact & enquiries' };
+export default function ContactPage() {
+  return <div className="container"><section className="page-hero"><div><Eyebrow>LET’S TALK</Eyebrow><h1>Every good plan<br /><em>starts with hello.</em></h1></div><p>Questions about a stay, a gathering or the practical details? Start here. This preview does not send messages to the property.</p></section><section className="event-enquiry section" style={{ paddingTop: 10 }}><div><Eyebrow>REACH THE RIGHT PEOPLE</Eyebrow><h2 style={{ fontSize: 39, marginBottom: 18 }}>A personal<br />conversation.</h2><p style={{ fontSize: 12 }}>Verified contact channels are being collected. We won’t publish a placeholder number as though someone is waiting on the other end.</p><div className="contact-channels">{[{ icon: Phone, label: 'Telephone', value: 'Awaiting a verified public number' }, { icon: MessageCircle, label: 'WhatsApp', value: 'Not available until verified' }, { icon: Mail, label: 'Email', value: 'Awaiting a monitored inbox' }, { icon: Clock3, label: 'Response time', value: 'Service commitment to be confirmed' }].map(c => <div className="contact-channel" key={c.label}><c.icon size={20} strokeWidth={1.4} /><div><strong>{c.label}</strong><p>{c.value}</p></div></div>)}</div></div><EnquiryForm kind="stay" /></section></div>;
+}

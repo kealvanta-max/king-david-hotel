@@ -1,0 +1,45 @@
+{
+  "name": "king-david-hotel",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@king-david/web",
+    "build": "npm run build --workspace=@king-david/web",
+    "start": "npm run start --workspace=@king-david/web",
+    "dev:api": "npm run dev --workspace=@king-david/api",
+    "dev:worker": "npm run dev --workspace=@king-david/worker",
+    "typecheck": "tsc --noEmit && npm run typecheck --workspaces --if-present",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "node scripts/run-e2e.mjs",
+    "db:migrate": "tsx packages/db/src/migrate.ts",
+    "db:check": "tsx scripts/check-database.ts",
+    "db:check:local": "tsx scripts/verify-local-database.ts",
+    "audit": "npm audit"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@electric-sql/pglite": "^0.3.14",
+    "@playwright/test": "^1.58.0",
+    "@sparticuz/chromium": "^153.0.0",
+    "@types/node": "^22.19.0",
+    "@types/pg": "^8.15.6",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "embedded-postgres": "^18.6.0-beta.19",
+    "tsc-alias": "^1.9.10",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "overrides": {
+    "rimraf": "6.1.4"
+  }
+}

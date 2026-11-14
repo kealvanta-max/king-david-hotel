@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@king-david/*": [
+        "packages/*/src"
+      ]
+    }
+  },
+  "include": [
+    "packages/**/*.ts",
+    "apps/api/**/*.ts",
+    "apps/worker/**/*.ts",
+    "tests/**/*.ts",
+    "scripts/**/*.ts",
+    "vitest.config.mts",
+    "playwright.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/dist",
+    "**/.next"
+  ]
+}

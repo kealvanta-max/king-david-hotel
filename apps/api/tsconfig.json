@@ -1,0 +1,1 @@
+{"extends":"../../tsconfig.json","compilerOptions":{"module":"CommonJS","moduleResolution":"Node","outDir":"dist","rootDir":"../..","noEmit":false,"declaration":false,"baseUrl":"../..","paths":{"@king-david/*":["packages/*/src"]}},"include":["src/**/*.ts","../../packages/*/src/**/*.ts"],"exclude":["../../packages/ui/**","../../node_modules","dist"]}

@@ -1,0 +1,23 @@
+{
+  "name": "@king-david/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0 --port 3000",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0 --port 3000",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.8",
+    "@fontsource/dm-sans": "^5.2.8",
+    "@king-david/contracts": "*",
+    "@king-david/db": "*",
+    "@king-david/policy": "*",
+    "lucide-react": "^0.577.0",
+    "next": "^16.4.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "^4.6.7"
+  }
+}
