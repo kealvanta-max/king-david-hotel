@@ -16,6 +16,13 @@ Settings for this npm-workspaces repository are committed in `vercel.json` so th
 
 The production build sends `X-Frame-Options: SAMEORIGIN`; the header is intentionally omitted in development so the Arena live preview can embed the app.
 
+### Current deployment and access
+
+- Project: `king-david-hotel` (`prj_hQZ73PilBiH7G5UlLTdAmi4IwLhG`), team `patienceboatemaah6-9752`.
+- Production URL: `https://king-david-hotel-patienceboatemaah6-9752.vercel.app` — build `READY`, promoted.
+- **Vercel Authentication is on for this account** (`ssoProtection: all_except_custom_domains`), so anonymous visitors currently get a Vercel login page instead of the site. To share the demo publicly, open Project → Settings → Deployment Protection and disable Vercel Authentication (or attach a custom domain, which is exempt). The available connector cannot change that setting.
+- The first build failed with `NEXT_OUTPUT_DIR_MISSING` because the host looked for `.next` at the repository root; the committed `vercel.json` output directory fixes it. Keep that file when changing hosting settings.
+
 The API and worker are long-running Node services and are **not** deployed by the web build. Use managed containers or a Node host with process supervision, TLS termination, health checks and secret injection. Build each workspace before `npm run start -w ...`. Redis is required by the worker; PostgreSQL is required by both.
 
 ## Production is a separate, gated release

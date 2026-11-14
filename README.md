@@ -16,6 +16,8 @@ Open `http://localhost:3000`. The staff workspace is `/admin`; its role selector
 - Staff workspace: enquiries, unified inventory calendar, quote approval, event operations, room blocks, folios/payments, tasks/outbox, content evidence, audit and launch gates.
 - Every enquiry explicitly reserves nothing. Confirmation requires an accepted quote and a verified demo deposit. Payment simulation is available only to the simulated admin/finance roles.
 
+A hosted demo build is promoted at `https://king-david-hotel-patienceboatemaah6-9752.vercel.app`. That Vercel account has Deployment Protection (Vercel Authentication) enabled, so the URL shows a Vercel login until you disable it in Project → Settings → Deployment Protection or attach a custom domain. See [deployment](docs/deployment.md).
+
 ## Repository map
 
 | Path | Responsibility |

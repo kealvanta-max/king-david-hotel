@@ -13,6 +13,9 @@
 | Production web build | PASS, 22 routes |
 | API and worker builds | PASS |
 | `npm audit` | 0 vulnerabilities after dependency updates/overrides |
+| Vercel production build | READY / promoted (`dpl_4UCEH58jU4r5TD42FZtTxnzA7RJF`, commit `47a052b`) |
+| Anonymous fetch of the deployed URL | Blocked by account-level Vercel Authentication (login page), not an app error |
+| Post-upgrade browser smoke (home, finance, mobile) | No page errors; layout intact |
 
 The E2E suite exercises the full stay path: enquiry → hold → itemised quote → manager approval → guest acceptance → deposit request → explicit simulated provider success → inventory confirmation → named guest. It also checks event capacity validation, route hydration/overflow, mobile navigation, keyboard dialog dismissal, reduced motion, storage failure and simulated read-only restrictions.
 
